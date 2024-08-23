@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Contact | Employee Management System</title>
+	<script type="text/javascript">
+		function validateName() {
+	
+		  var name = document.getElementById('contact-name').value;
+	
+		  if(name.length == 0) {
+	
+			producePrompt('Name is required', 'name-error' , 'red')
+			return false;
+	
+		}
+	
+		if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
+	
+			producePrompt('Input your First and Last name.','name-error', 'red');
+			return false;
+	
+		}
+	
+		producePrompt('Valid', 'name-error', 'green');
+		return true;
+	
+	}
+	
+	
+	function validateEmail () {
+	
+	  var email = document.getElementById('contact-email').value;
+	
+	  if(email.length == 0) {
+	
+		producePrompt('Email Invalid','email-error', 'red');
+		return false;
+	
+	}
+	
+	if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+	
+		producePrompt('Email Invalid', 'email-error', 'red');
+		return false;
+	
+	}
+	
+	producePrompt('Valid', 'email-error', 'green');
+	return true;
+	
+	}
+	
+	function validateMessage() {
+	  var message = document.getElementById('contact-message').value;
+	  var required = 30;
+	  var left = required - message.length;
+	
+	  if (left > 0) {
+		producePrompt(left + ' more characters required','message-error','red');
+		return false;
+	}
+	
+	producePrompt('Valid', 'message-error', 'green');
+	return true;
+	
+	}
+	
+	function validateForm() {
+	  if (!validateName() || !validateEmail() || !validateMessage()) {
+		jsShow('submit-error');
+		producePrompt('Please fix errors to submit.', 'submit-error', 'red');
+		setTimeout(function(){jsHide('submit-error');}, 2000);
+		return false;
+	}
+	else {
+	
+	}
+	}
+	
+	function jsShow(id) {
+	  document.getElementById(id).style.display = 'block';
+	}
+	
+	function jsHide(id) {
+	  document.getElementById(id).style.display = 'none';
+	}
+	
+	
+	function producePrompt(message, promptLocation, color) {
+	
+	  document.getElementById(promptLocation).innerHTML = message;
+	  document.getElementById(promptLocation).style.color = color;
+	
+	}
+	
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="icon.png" type="image/png" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="animation.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<body class="hero-anime">
+		<div class="navigation-wrap bg-light start-header start-style">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<nav class="navbar navbar-expand-md navbar-light">
+
+							<a class="navbar-brand" href="index.html"><img src="logo.svg" alt=""></a>
+
+							<button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav ml-auto py-4 py-md-0">
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+										<a class="nav-link" href="index.html">HOME</a>
+									</li>
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+										<a class="nav-link" href="aboutus.html">ABOUT US</a>
+									</li>
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+										<a class="nav-link" href="contact.html">CONTACT</a>
+									</li>
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+										<a class="nav-link" href="elogin.php">LOGIN</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+<div class="ccontainer">
+    <div class="content">
+      <div class="left-side">
+	  
+        <div class="address details">
+          <i class='fas fa-map-marker-alt' style='color:#f1a106'></i>
+          <div class="topic">Address</div>
+          <div class="text-one">Iloilo City</div>
+          <div class="text-two">Philippines</div>
+        </div>
+		
+		 <div class="phone details">
+          <i class='fas fa-phone-alt' style='color:#f1a106'></i>
+          <div class="topic">Phone</div>
+		   <div class="text-one">09123456789</div>
+          <div class="text-two">+09987654321</div>
+        </div>
+		
+        <div class="email details">
+          <i class='fa fa-envelope' style='color:#f1a106'></i>
+          <div class="topic">Email</div>
+          <div class="text-one">emsteam.020@gmail.com</div>
+          <div class="text-two">emsteam02@gmail.com</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">SEND US MESSAGE</div>
+        <p>If you have any queries related to our website, you can send us message from here. It's our pleasure to help you.</p>
+      <form action="mailto:emsteam.020@gmail.com" name="contact_form" method="post">
+        <div class="input-box">
+		     <span class='error-message' id='name-error'></span>
+             <input type="text" name="name" id="contact-name" placeholder="Enter your name" onkeyup='validateName()'>
+        </div>
+        <div class="input-box">
+		 <span class='error-message' id='email-error'></span>
+          <input type="email" name="email" id="contact-email" placeholder="Enter your email" onkeyup='validateEmail()'>
+        </div>
+        <div class="input-box message-box">
+         <span class='error-message' id='message-error'></span>
+		 <textarea name="message" id='contact-message'  placeholder="Enter your message" onkeyup='validateMessage()'></textarea>
+        </div>
+        <div class="button">
+			<span class='error-message' id='submit-error'></span>
+			<button onclick='return validateForm()' class="btn btn-default"><a href ="thankyou.html">Submit</a></button>
+		  
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+		
+	</body>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+	<script src="./script.js"></script>
+
+</body>
+
+</html>
